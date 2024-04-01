@@ -7,7 +7,7 @@
 </head>
 <body>
     <h2>Formulario de Información Personal</h2>
-    <form action="#" method="post">
+    <form id="infoForm">
         <label for="nombre">Nombre:</label>
         <input type="text" id="nombre" name="nombre" required><br><br>
 
@@ -23,8 +23,51 @@
         <label for="telefono">Teléfono:</label>
         <input type="tel" id="telefono" name="telefono"><br><br>
 
-        <input type="submit" value="Enviar">
+        <label for="ciudad">Ciudad:</label>
+        <input type="text" id="ciudad" name="ciudad"><br><br>
+
+        <label for="pais">País:</label>
+        <input type="text" id="pais" name="pais"><br><br>
+
+        <input type="button" value="Enviar" onclick="mostrarInformacion()">
         <input type="reset" value="Limpiar">
     </form>
+
+    <div id="infoContainer" style="display: none;">
+        <h2>Información Personal Recibida</h2>
+        <p><strong>Nombre:</strong> <span id="nombreMostrado"></span></p>
+        <p><strong>Apellido:</strong> <span id="apellidoMostrado"></span></p>
+        <p><strong>Edad:</strong> <span id="edadMostrada"></span></p>
+        <p><strong>Correo Electrónico:</strong> <span id="emailMostrado"></span></p>
+        <p><strong>Teléfono:</strong> <span id="telefonoMostrado"></span></p>
+        <p><strong>Ciudad:</strong> <span id="ciudadMostrada"></span></p>
+        <p><strong>País:</strong> <span id="paisMostrado"></span></p>
+    </div>
+
+    <script>
+        function mostrarInformacion() {
+         
+            var nombre = document.getElementById('nombre').value;
+            var apellido = document.getElementById('apellido').value;
+            var edad = document.getElementById('edad').value;
+            var email = document.getElementById('email').value;
+            var telefono = document.getElementById('telefono').value;
+            var ciudad = document.getElementById('ciudad').value;
+            var pais = document.getElementById('pais').value;
+
+       
+            document.getElementById('nombreMostrado').innerText = nombre;
+            document.getElementById('apellidoMostrado').innerText = apellido;
+            document.getElementById('edadMostrada').innerText = edad;
+            document.getElementById('emailMostrado').innerText = email;
+            document.getElementById('telefonoMostrado').innerText = telefono;
+            document.getElementById('ciudadMostrada').innerText = ciudad;
+            document.getElementById('paisMostrado').innerText = pais;
+
+         
+            document.getElementById('infoContainer').style.display = 'block';
+            document.getElementById('infoForm').style.display = 'none';
+        }
+    </script>
 </body>
 </html>
