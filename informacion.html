@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Información Personal Recibida</title>
+</head>
+<body>
+    <h2>Información Personal Recibida</h2>
+    <div id="info">
+        <p><strong>Nombre:</strong> <span id="nombre"></span></p>
+        <p><strong>Apellido:</strong> <span id="apellido"></span></p>
+        <p><strong>Edad:</strong> <span id="edad"></span></p>
+        <p><strong>Correo Electrónico:</strong> <span id="email"></span></p>
+        <p><strong>Teléfono:</strong> <span id="telefono"></span></p>
+        <p><strong>Ciudad:</strong> <span id="ciudad"></span></p>
+        <p><strong>País:</strong> <span id="pais"></span></p>
+    </div>
+
+    <script>
+     
+        const urlParams = new URLSearchParams(window.location.search);
+
+       
+        document.getElementById('nombre').innerText = urlParams.get('nombre') || '-';
+        document.getElementById('apellido').innerText = urlParams.get('apellido') || '-';
+        document.getElementById('edad').innerText = urlParams.get('edad') || '-';
+        document.getElementById('email').innerText = urlParams.get('email') || '-';
+        document.getElementById('telefono').innerText = urlParams.get('telefono') || '-';
+        document.getElementById('ciudad').innerText = urlParams.get('ciudad') || '-';
+        document.getElementById('pais').innerText = urlParams.get('pais') || '-';
+    </script>
+</body>
+</html>
